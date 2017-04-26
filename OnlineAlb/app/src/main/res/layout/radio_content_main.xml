@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:mContext="eu.applogic.onlinealb.Activity.MainActivity"
+    android:background="@color/colorPrimaryDark">
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:id="@+id/searchView"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@color/colorPrimary"
+                android:orientation="vertical"/>
+
+            <com.arlib.floatingsearchview.FloatingSearchView
+                android:id="@+id/mSearch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:floatingSearch_dimBackground="false"
+                app:floatingSearch_searchBarMarginLeft="10dp"
+                app:floatingSearch_searchBarMarginTop="10dp"
+                app:floatingSearch_searchBarMarginRight="10dp"
+                app:floatingSearch_searchHint="Search"
+                app:floatingSearch_suggestionsListAnimDuration="250"
+                app:floatingSearch_showSearchKey="true"
+                app:floatingSearch_leftActionMode="showSearch"
+                app:floatingSearch_close_search_on_keyboard_dismiss="true"
+                app:floatingSearch_hideOverflowMenuWhenFocused="false"
+                app:floatingSearch_showVoiceInput="true"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/searchView">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollbars="vertical" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+</android.support.constraint.ConstraintLayout>
